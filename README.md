@@ -6,3 +6,5 @@
 | Phạm Thị Trâm Anh  | 21520146  |
 ## Dataset:
 Link (kaggle): https://www.kaggle.com/datasets/asaniczka/tmdb-movies-dataset-2023-930k-movies
+## Database:
+Link (ggdrive): https://drive.google.com/drive/folders/1oh-qLWDDheHbkVyqjRIKNe6MDLlVtKXY?usp=drive_link
