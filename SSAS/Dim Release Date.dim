@@ -1,0 +1,351 @@
+﻿<Dimension xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="e5a6b486-aa54-481f-ace6-23d7d4900723" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>Dim Release Date</ID>
+  <Name>Dim Release Date</Name>
+  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
+      <Value>
+        <dds xmlns="">
+          <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="2" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-1833" scrolltop="-7038" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="100" x="6731" y="17103" backcolor="16777215" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="0" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
+            <font>
+              <ddsxmlobjectstreamwrapper binary="010000009001b0300100065461686f6d61" />
+            </font>
+            <mouseicon>
+              <ddsxmlobjectstreamwrapper binary="6c74000000000000" />
+            </mouseicon>
+          </diagram>
+          <layoutmanager>
+            <ddsxmlobj />
+          </layoutmanager>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="Dim_release_date" left="20" top="0" logicalid="1" controlid="1" masterid="0" hint1="0" hint2="0" width="3217" height="3027" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000e0000910c0000d30b0000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dbo_Dim_release_date" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+        </dds>
+      </Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowRelationshipNames</Name>
+      <Value>false</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:UseDiagramDefaultLayout</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
+      <Value>-1833</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
+      <Value>-7038</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
+      <Value>20</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingTop</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramZoom</Name>
+      <Value>100</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ARDiagramLayout</Name>
+      <Value>
+        <DiagramLayout ZoomPercent="100" ViewPortX="0" ViewPortY="0" xmlns="">
+          <Shapes NodeWidth="142">
+            <Shape Id="Date Id" Expanded="false">
+              <Attributes>
+                <Attribute Id="Date Id" />
+                <Attribute Id="Release Date" />
+              </Attributes>
+              <Position x="20" y="20" />
+            </Shape>
+            <Shape Id="Release Day" Expanded="false">
+              <Attributes>
+                <Attribute Id="Release Day" />
+              </Attributes>
+              <Position x="202" y="20" />
+            </Shape>
+            <Shape Id="Release Month" Expanded="false">
+              <Attributes>
+                <Attribute Id="Release Month" />
+              </Attributes>
+              <Position x="385" y="20" />
+            </Shape>
+            <Shape Id="Release Quarter" Expanded="false">
+              <Attributes>
+                <Attribute Id="Release Quarter" />
+              </Attributes>
+              <Position x="567" y="20" />
+            </Shape>
+            <Shape Id="Release Year" Expanded="false">
+              <Attributes>
+                <Attribute Id="Release Year" />
+              </Attributes>
+              <Position x="750" y="20" />
+            </Shape>
+          </Shapes>
+        </DiagramLayout>
+      </Value>
+    </Annotation>
+  </Annotations>
+  <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+  <State>Unprocessed</State>
+  <Source xsi:type="DataSourceViewBinding" dwd:design-time-name="8398c0cd-cc1e-41fd-bd25-f86f28d7ded3">
+    <DataSourceViewID>Movies TMDB</DataSourceViewID>
+  </Source>
+  <Type>Time</Type>
+  <UnknownMember>Visible</UnknownMember>
+  <ErrorConfiguration dwd:design-time-name="46e51361-4f5c-411a-a695-10b9fd903bff">
+    <KeyNotFound>ReportAndStop</KeyNotFound>
+    <KeyDuplicate>ReportAndStop</KeyDuplicate>
+    <NullKeyNotAllowed>ReportAndStop</NullKeyNotAllowed>
+  </ErrorConfiguration>
+  <CurrentStorageMode>Molap</CurrentStorageMode>
+  <Attributes>
+    <Attribute dwd:design-time-name="68b212dc-72e7-4440-bcf3-c446024bfd1d">
+      <ID>Date Id</ID>
+      <Name>Date Id</Name>
+      <Usage>Key</Usage>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="1ee25111-e795-4398-93f5-686772cb288d">
+          <DataType>Integer</DataType>
+          <NullProcessing>UnknownMember</NullProcessing>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="6fb3b580-2f1d-4c11-9e0e-00b1aa5adc78">
+            <TableID>dbo_Dim_release_date</TableID>
+            <ColumnID>date_id</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <AttributeRelationships>
+        <AttributeRelationship dwd:design-time-name="0af2acb6-e6de-4375-9a58-787ae6322015">
+          <AttributeID>Release Date</AttributeID>
+          <Name>Release Date</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="dc27f164-4a16-400e-9128-41dd31e86070">
+          <AttributeID>Release Day</AttributeID>
+          <RelationshipType>Rigid</RelationshipType>
+          <Name>Release Day</Name>
+        </AttributeRelationship>
+      </AttributeRelationships>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="551e1e1e-f2ad-4d7c-8d7d-56e228d0269a">
+      <ID>Release Date</ID>
+      <Name>Release Date</Name>
+      <Type>Date</Type>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="a3ded250-0263-4eb7-9faa-e4d3d7ce996a">
+          <DataType>Date</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="76387f8a-91f2-49f6-913f-4ff1bc5fa3a5">
+            <TableID>dbo_Dim_release_date</TableID>
+            <ColumnID>Release_Date</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="832e5ab8-bacf-42d9-acfb-03509cf22f9e">
+      <ID>Release Day</ID>
+      <Name>Release Day</Name>
+      <Type>DayOfMonth</Type>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="d147159b-c44b-4546-8f3c-4d6256cc5ab5">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="836ebfbe-01f8-4623-9553-78ee45c0f689">
+            <TableID>dbo_Dim_release_date</TableID>
+            <ColumnID>release_day</ColumnID>
+          </Source>
+        </KeyColumn>
+        <KeyColumn dwd:design-time-name="5624cc07-421e-4a87-9481-eaf77122baab">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="0f9b5a63-1adc-4518-a758-86e8b9c08d90">
+            <TableID>dbo_Dim_release_date</TableID>
+            <ColumnID>release_month</ColumnID>
+          </Source>
+        </KeyColumn>
+        <KeyColumn dwd:design-time-name="665a30d5-b769-4163-bfa4-4ca3ae620423">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="3f74d080-a34d-41b8-8ede-d1d26de65a90">
+            <TableID>dbo_Dim_release_date</TableID>
+            <ColumnID>release_quarter</ColumnID>
+          </Source>
+        </KeyColumn>
+        <KeyColumn dwd:design-time-name="90359baf-7adc-40d9-be24-36e34f44268a">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="eb0f5f44-4807-4897-863c-07213fec373e">
+            <TableID>dbo_Dim_release_date</TableID>
+            <ColumnID>release_year</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn dwd:design-time-name="1841c5cf-7313-4bfe-8899-1a215508ec9c">
+        <DataType>WChar</DataType>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="158b22e6-1d52-4308-9f14-0e31354ff723">
+          <TableID>dbo_Dim_release_date</TableID>
+          <ColumnID>release_day</ColumnID>
+        </Source>
+      </NameColumn>
+      <AttributeRelationships>
+        <AttributeRelationship dwd:design-time-name="72766bf9-69b1-4570-8c88-8ded68ddc861">
+          <AttributeID>Release Month</AttributeID>
+          <RelationshipType>Rigid</RelationshipType>
+          <Name>Release Month</Name>
+        </AttributeRelationship>
+      </AttributeRelationships>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="cb42cb73-a9dd-46c1-a677-01e6416ba889">
+      <ID>Release Month</ID>
+      <Name>Release Month</Name>
+      <Type>Months</Type>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="19b90801-d568-4d43-ba84-1924314f000c">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="96a0e2a8-89e8-4098-b6d5-50a8bd407964">
+            <TableID>dbo_Dim_release_date</TableID>
+            <ColumnID>release_month</ColumnID>
+          </Source>
+        </KeyColumn>
+        <KeyColumn dwd:design-time-name="e1438fd7-fe77-4a43-ae05-39cd7afb35d0">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="e0835993-03a0-4bf9-889e-4f41f7a60aac">
+            <TableID>dbo_Dim_release_date</TableID>
+            <ColumnID>release_quarter</ColumnID>
+          </Source>
+        </KeyColumn>
+        <KeyColumn dwd:design-time-name="a34253fd-1bf4-41ad-85f7-b1df20698d62">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="58d4c5be-71d4-4732-b32b-8208502ac2c0">
+            <TableID>dbo_Dim_release_date</TableID>
+            <ColumnID>release_year</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn dwd:design-time-name="b45dd3f3-02d4-45cc-9b06-9cb722cc4d22">
+        <DataType>WChar</DataType>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="96fd27fc-0af0-4574-ae1b-b328f0e59d1a">
+          <TableID>dbo_Dim_release_date</TableID>
+          <ColumnID>release_month</ColumnID>
+        </Source>
+      </NameColumn>
+      <AttributeRelationships>
+        <AttributeRelationship dwd:design-time-name="fbeef3a0-11f4-4e39-9c8c-bae96d526d1e">
+          <AttributeID>Release Quarter</AttributeID>
+          <RelationshipType>Rigid</RelationshipType>
+          <Name>Release Quarter</Name>
+        </AttributeRelationship>
+      </AttributeRelationships>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="ae44cd5c-017f-40fd-9491-5fa8256a0359">
+      <ID>Release Year</ID>
+      <Name>Release Year</Name>
+      <Type>Months</Type>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="a2496860-82eb-4395-a762-8b3b0fcbe629">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="408a2a5a-5d0a-4803-bc52-944dcc1afc68">
+            <TableID>dbo_Dim_release_date</TableID>
+            <ColumnID>release_year</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="1d0487ad-da45-4f49-a472-f715d13832c1">
+      <ID>Release Quarter</ID>
+      <Name>Release Quarter</Name>
+      <Type>Quarters</Type>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="6538664a-f3ff-46b9-b744-0a62dcb85f26">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="36c9796b-ffca-47ec-9fdd-3a566059067a">
+            <TableID>dbo_Dim_release_date</TableID>
+            <ColumnID>release_quarter</ColumnID>
+          </Source>
+        </KeyColumn>
+        <KeyColumn dwd:design-time-name="dca02ca0-6076-47c4-8596-ac4a4008fe1a">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="0a512ac3-0da6-4216-85d1-77fd8a6ed9f2">
+            <TableID>dbo_Dim_release_date</TableID>
+            <ColumnID>release_year</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn dwd:design-time-name="1c2751a9-85fc-4f39-ad1c-19d8454c1859">
+        <DataType>WChar</DataType>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="03cef55f-cd75-47c7-85c7-ede5e83ae152">
+          <TableID>dbo_Dim_release_date</TableID>
+          <ColumnID>release_quarter</ColumnID>
+        </Source>
+      </NameColumn>
+      <AttributeRelationships>
+        <AttributeRelationship dwd:design-time-name="4bb613b3-f0bf-478e-a890-3dfd4442fe06">
+          <AttributeID>Release Year</AttributeID>
+          <RelationshipType>Rigid</RelationshipType>
+          <Name>Release Year</Name>
+        </AttributeRelationship>
+      </AttributeRelationships>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+  </Attributes>
+  <Hierarchies>
+    <Hierarchy dwd:design-time-name="630d70ac-8472-4d63-8238-b49ef06e3413">
+      <ID>Hierarchy</ID>
+      <Name>Date</Name>
+      <Levels>
+        <Level dwd:design-time-name="4fd8f1a9-611d-4a47-8c9d-68a32e0a24e9">
+          <ID>Release Year</ID>
+          <Name>Release Year</Name>
+          <SourceAttributeID>Release Year</SourceAttributeID>
+        </Level>
+        <Level dwd:design-time-name="e435d599-405f-4f16-95c9-5ef4e02d2e6e">
+          <ID>Release Quarter</ID>
+          <Name>Release Quarter</Name>
+          <SourceAttributeID>Release Quarter</SourceAttributeID>
+        </Level>
+        <Level dwd:design-time-name="18b9e0be-bcb6-41f6-a190-565d00389145">
+          <ID>Release Month</ID>
+          <Name>Release Month</Name>
+          <SourceAttributeID>Release Month</SourceAttributeID>
+        </Level>
+        <Level dwd:design-time-name="004ea111-8b3a-4c65-a1fa-016ffbad390e">
+          <ID>Release Day</ID>
+          <Name>Release Day</Name>
+          <SourceAttributeID>Release Day</SourceAttributeID>
+        </Level>
+      </Levels>
+    </Hierarchy>
+  </Hierarchies>
+  <ddl300:ProcessingState>Unprocessed</ddl300:ProcessingState>
+</Dimension>
