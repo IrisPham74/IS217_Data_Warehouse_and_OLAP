@@ -1,4 +1,5 @@
 # ĐỒ ÁN: XÂY DỰNG KHO DỮ LIỆU PHÂN TÍCH XU HƯỚNG PHIM ẢNH TRÊN NỀN TẢNG TOÀN CẦU TMDB
+State: In progress
 ## Thành viên nhóm:
 | Họ và tên     | MSSV          |
 | ------------- | ------------- |
