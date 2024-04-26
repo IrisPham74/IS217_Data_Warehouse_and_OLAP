@@ -4,3 +4,5 @@
 | ------------- | ------------- |
 | Ngô Đức Hoàng Hiệp  |  21520846 |
 | Phạm Thị Trâm Anh  | 21520146  |
+## Dataset:
+Link (kaggle): https://www.kaggle.com/datasets/asaniczka/tmdb-movies-dataset-2023-930k-movies
