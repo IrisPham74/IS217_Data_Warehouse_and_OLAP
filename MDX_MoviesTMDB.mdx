@@ -1,0 +1,155 @@
+-- query 1: revenue and budget of movies according to runtime range
+select {[Measures].[Revenue], [Measures].[Budget]} on columns,
+nonempty([Dim Runtime Range].[Runtime Range].children) on rows
+from [Movies TMDB];
+
+-- query 2: revenue and id of 5 highest revenue movies 
+select {[Measures].[Revenue]} on columns,
+topcount([Dim Movies].[Title].children, 5, [Measures].[Revenue]) on rows
+from [Movies TMDB];
+
+-- query 3: top 10 highest budget movies released in 2023 in descending order of popularity
+select {[Measures].[Budget],[Measures].[Popularity]} on columns,
+order(
+	topcount([Dim Movies].[Title].children, 10, [Measures].[Budget]),
+	[Measures].[Popularity],
+	DESC
+) on rows
+from [Movies TMDB]
+where [Dim Release Date].[Release Year].&[2023];
+
+-- query 4: number of movies released in 4 quarters of 2023
+select [Measures].[Number of Movies] on columns,
+[Dim Release Date].[Release Quarter].members on rows
+from [Movies TMDB]
+where [Dim Release Date].[Release Year].&[2023];
+
+-- query 5: vote count and mean vote avg of movies that have revenue over $1.5B
+with member [Measures].[Mean Average Vote] 
+as (sum([Measures].[Vote Average]) / [Measures].[Number of Movies])
+select {[Measures].[Mean Average Vote], [Measures].[Vote Count]} on columns,
+FILTER([Dim Movies].[Title].children, [Measures].[Revenue] > 1500000000) on rows
+from [Movies TMDB];
+
+-- query 6: top 3 highest budget movies for every vi, en, cn language
+select {[Measures].[Budget]} on columns,
+generate(
+{
+	[Dim Language].[Original Language].&[vi],
+	[Dim Language].[Original Language].&[en],
+	[Dim Language].[Original Language].&[cn]
+},	
+	topcount(
+		[Dim Language].[Original Language].currentmember * [Dim Movies].[Title].children,
+		3,
+		[Measures].[Budget]
+	)
+) on rows
+from [Movies TMDB];
+
+-- query 7: top 2 most popular movies released from 2020 to 2023, movie's title starting by letter "H"
+select {[Measures].[Popularity]} on columns,
+generate(
+	{[Dim Release Date].[Release Year].&[2020]:[Dim Release Date].[Release Year].&[2024]},	
+	topcount(
+		filter(
+			[Dim Release Date].[Release Year].currentmember * [Dim Movies].[Title].children,
+			left([Dim Movies].[Title].currentmember.name, 1) = 'H'
+		),
+		2,
+		[Measures].[Popularity]
+	)
+) on rows
+from [Movies TMDB];
+
+-- query 8: number of movies having original languages are english, Chinese, Vietnamese, according various runtime ranges 
+with member [Measures].[Mean Average Vote] 
+as (sum([Measures].[Vote Average]) / [Measures].[Number of Movies])
+select {[Measures].[Number of Movies], [Measures].[Vote Count], [Measures].[Mean Average Vote]} on columns, 
+nonempty(crossjoin([Dim Runtime].[Runtime Range].children, 
+	{
+		[Dim Language].[Original Language].&[vi],
+		[Dim Language].[Original Language].&[en],
+		[Dim Language].[Original Language].&[cn]
+	})
+)on rows
+from [Movies TMDB];
+
+-- query 9: drilldown from quarter to year to show total revenue of movies.
+select [Measures].[Revenue] on columns,
+drilldownlevel(
+	{[Dim Release Dates].[Year Quarter].[Year].&[2020]:[Dim Release Dates].[Year Quarter].[Year].&[2024]}
+) on rows
+from [Movies TMDB];
+
+-- query 10: Vote count and vote avg of vi, en movies runtime over 1h, released after 2023
+select {[Measures].[Popularity], [Measures].[Vote Count]} on columns,
+([Dim Release Date].[Release Year].&[2020]:[Dim Release Date].[Release Year].&[2023], 
+{
+	[Dim Language].[Original Language].&[vi],
+	[Dim Language].[Original Language].&[en]
+}) 
+on rows
+from [Movies TMDB]
+where [Dim Runtime].[Runtime Range].&[under 1h];
+
+-- query 11
+with 
+member [Measures].[Losses Movies Count] as
+count(
+	filter(
+		[Dim Movies].[Movie Id].children,
+		[Measures].[Revenue] < [Measures].[Budget]
+	)
+)
+member [Measures].[Losses Movies Per] as
+[Measures].[Losses Movies Count] / [Measures].[Number of Movies]
+select {[Measures].[Measures].[Losses Movies Count], [Measures].[Number of Movies], [Measures].[Losses Movies Per]} on columns,
+{[Dim Release Date].[Release Year].&[2020]:[Dim Release Date].[Release Year].&[2024]} on rows
+from [Movies TMDB];
+
+-- query 12: number of movies and total vote count of en, vi movies each quarter starting from 2012 to 2024
+select {[Measures].[Number of Movies], [Measures].[Vote Count]} on columns,
+nonempty({[Dim Release Date].[Release Year].&[2021]: [Dim Release Date].[Release Year].&[2024]} *
+[Dim Release Date].[Release Quarter].children * 
+{
+	[Dim Language].[Original Language].&[vi],
+	[Dim Language].[Original Language].&[en]
+}) on rows
+from [Movies TMDB];
+
+-- query 13: number of adult-only and non-adult-only movies from 2021 to 2024
+select {[Measures].[Number of Movies], [Measures].[Revenue]} on columns,
+nonempty(
+{[Dim Release Date].[Release Year].&[2021]: 
+[Dim Release Date].[Release Year].&[2024]} *
+[Dim Adult].[Adult].members) on rows
+from [Movies TMDB];
+
+-- query 14: 
+select {[Measures].[Budget], [Measures].[Revenue], [Measures].[Vote Count]} on columns,
+bottomcount(
+	filter(
+		nonempty([Dim movies].[Title].members 
+		* {[Dim Release Date].[Release year].&[2021]:[Dim Release Date].[Release year].&[2024]}),
+		[Measures].[Budget] >= 0 and [Measures].[Revenue] > 0),
+	5, 
+	[Measures].[Vote Count]
+)
+on rows
+from [Movies TMDB];
+
+-- query 15: total vote count, total popularity and total budget of movies released in the years having higher 15000 released movies
+select {[Measures].[Popularity], [Measures].[Vote Count], 
+		[Measures].[Budget], [Measures].[Number of Movies]} on columns,
+filter(
+		order(
+			[Dim Release Date].[Release Year].members,
+			[Measures].[Budget],
+			DESC
+		),
+	[Measures].[Number of Movies] >= 15000
+)
+on rows
+from [Movies TMDB];
+
